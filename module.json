@@ -1,0 +1,20 @@
+{
+  "name": "cmsis-core-stm32f091rc",
+  "version": "0.0.0",
+  "description": "CMSIS Core module for stm32f091rc microcontrollers",
+  "keywords": [],
+  "author": "Javier Gomez Moreno <javier.moreno@tridonic.com>",
+  "licenses": [
+    {
+      "url": "https://spdx.org/licenses/BSD-3-Clause",
+      "type": "BSD-3-Clause"
+    }
+  ],
+  "extraIncludes": [
+    "cmsis-core-stm32f091rc"
+  ],
+  "dependencies": {
+    "cmsis-core": "*"
+  },
+  "targetDependencies": {}
+}
