@@ -1,5 +1,5 @@
 {
-  "name": "cmsis-core-stm32f91xc",
+  "name": "cmsis-core-stm32f091xc",
   "version": "0.0.0",
   "description": "CMSIS Core module for stm32f091xc microcontrollers",
   "keywords": [
