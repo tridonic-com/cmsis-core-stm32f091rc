@@ -84,20 +84,9 @@
 #include "stm32f0xx.h"
 #include "hal_tick.h"
 
-#ifndef YOTTA_CFG_HARDWARE_EXTERNALCLOCK
-#warning A "config":{"hardware":{"externalClock":"<FREQ>"}} entry is required in either target.json or config.json
-
-#if defined(HSE_VALUE)
-#warning HSE_VALUE is deprecated.  Define hardware::externalClock with yotta config instead.
-#endif
-
-#else
-#if defined(HSE_VALUE)
-#warning HSE_VALUE ignored, using yotta_config values instead
-#endif
-#undef  HSE_VALUE
-#define HSE_VALUE    ((uint32_t)(YOTTA_CFG_HARDWARE_EXTERNALCLOCK)) /*!< Default value of the External oscillator in Hz */
-#endif
+#if !defined  (HSE_VALUE) 
+  #define HSE_VALUE    ((uint32_t)8000000) /*!< Default value of the External oscillator in Hz */
+#endif /* HSE_VALUE */
 
 #if !defined  (HSI_VALUE)
   #define HSI_VALUE    ((uint32_t)8000000) /*!< Value of the Internal oscillator in Hz*/
@@ -180,11 +169,6 @@ uint8_t SetSysClock_PLL_HSI(void);
   */
 void SystemInit(void)
 {
-  /* Include the code that had been removed if uVisor is not present */
-#ifndef YOTTA_CFG_UVISOR_PRESENT
-  SystemInitPre();
-#endif /* ndef YOTTA_CFG_UVISOR_PRESENT */
-
   /* Reset the RCC clock configuration to the default reset state ------------*/
   /* Set HSION bit */
   RCC->CR |= (uint32_t)0x00000001;
