@@ -80,6 +80,17 @@
   #endif
 #endif
 
+#ifndef YOTTA_CFG_HARDWARE_INTERNALCLOCK
+  #warning A "config":{"hardware":{"internalClock":"<FREQ>"}} entry is required in either target.json or config.json
+  #if defined(HSI_VALUE)
+    #warning HSI_VALUE is deprecated.  Define hardware::internalClock with yotta config instead.
+  #endif
+#else
+  #if defined(HSI_VALUE)
+    #warning HSI_VALUE ignored, using yotta_config values instead
+  #endif
+#endif
+
 /** @addtogroup CMSIS
   * @{
   */
