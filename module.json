@@ -1,6 +1,6 @@
 {
   "name": "cmsis-core-stm32f091rc",
-  "version": "0.0.0-tri-0.0.5",
+  "version": "0.0.0-tri-0.1.6",
   "description": "CMSIS Core module for stm32f091rc microcontrollers",
   "keywords": [],
   "author": "Javier Gomez Moreno <javier.moreno@tridonic.com>",
@@ -14,7 +14,7 @@
     "cmsis-core-stm32f091rc"
   ],
   "dependencies": {
-    "cmsis-core": "tridonic-com/cmsis-core#1.1.0-tri-0.0.5"
+    "cmsis-core": "tridonic-com/cmsis-core#b1.1.0-tri-0.1.6"
   },
   "targetDependencies": {}
 }
