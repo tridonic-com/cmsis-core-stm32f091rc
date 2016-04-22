@@ -1,20 +1,28 @@
 {
   "name": "cmsis-core-stm32f091rc",
-  "version": "0.0.0-tri-0.0.5",
-  "description": "CMSIS Core module for stm32f091rc microcontrollers",
-  "keywords": [],
-  "author": "Javier Gomez Moreno <javier.moreno@tridonic.com>",
+  "version": "0.0.3-tri-0.4.0",
+  "description": "CMSIS Core Implementation for STM32F091xC",
+  "keywords": [
+    "cmsis",
+    "stm32f091xc"
+  ],
+  "author": "STMicroelectronics",
+  "repository": {
+    "url": "https://github.com/ARMmbed/cmsis-core-stm32f091xc.git",
+    "type": "git"
+  },
+  "homepage": "https://github.com/ARMmbed/cmsis-core-stm32f091xc",
   "licenses": [
     {
-      "url": "https://spdx.org/licenses/BSD-3-Clause",
-      "type": "BSD-3-Clause"
+      "url": "https://spdx.org/licenses/Apache-2.0",
+      "type": "Apache-2.0"
     }
   ],
   "extraIncludes": [
     "cmsis-core-stm32f091rc"
   ],
   "dependencies": {
-    "cmsis-core": "tridonic-com/cmsis-core#1.1.0-tri-0.0.5"
+    "cmsis-core": "tridonic-com/cmsis-core#b1.2.0-tri-0.4.0"
   },
   "targetDependencies": {}
 }

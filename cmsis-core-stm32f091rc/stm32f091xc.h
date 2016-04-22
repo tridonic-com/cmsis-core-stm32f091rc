@@ -56,9 +56,17 @@
  extern "C" {
 #endif /* __cplusplus */
 
+
+#undef  HSE_VALUE
+#define HSE_VALUE    ((uint32_t)(YOTTA_CFG_HARDWARE_EXTERNALCLOCK)) /*!< Default value of the External oscillator in Hz */
+
+#undef  HSI_VALUE
+#define HSI_VALUE    ((uint32_t)(YOTTA_CFG_HARDWARE_INTERNALCLOCK)) /*!< Default value of the Internal oscillator in Hz */
+
 /** @addtogroup Configuration_section_for_CMSIS
   * @{
   */
+
 /**
  * @brief Configuration of the Cortex-M0 Processor and Core Peripherals
  */
