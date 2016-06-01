@@ -385,7 +385,8 @@ void SetSysClock(void)
   }
   
   // Output clock on MCO pin(PA8) for debugging purpose
-  //HAL_RCC_MCOConfig(RCC_MCO, RCC_MCOSOURCE_SYSCLK, RCC_MCO_NODIV); // 48 MHz
+  // HAL_RCC_MCOConfig(RCC_MCO, RCC_MCOSOURCE_SYSCLK, RCC_MCO_DIV1); // SYSCLK (should be 48 MHz)
+  // HAL_RCC_MCOConfig(RCC_MCO, RCC_MCOSOURCE_HSI, RCC_MCO_DIV1); // HSI (should be 8 MHz)
 }
 
 #if (USE_PLL_HSE_XTAL != 0) || (USE_PLL_HSE_EXTC != 0)
@@ -447,6 +448,12 @@ uint8_t SetSysClock_PLL_HSI(void)
   RCC_ClkInitTypeDef RCC_ClkInitStruct;
   RCC_OscInitTypeDef RCC_OscInitStruct;
  
+
+  // Obtain the RCC hardware configuration from the microcontroller
+  // Needed especially to obtain the calibration values for the HSIs!
+  // Otherwise running almost always on 7.55MHz (HSI)
+  HAL_RCC_GetOscConfig(&RCC_OscInitStruct);
+
   // Select PLLCLK = 48 MHz ((HSI 8 MHz / 2) * 12)
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
   RCC_OscInitStruct.HSIState       = RCC_HSI_ON;
