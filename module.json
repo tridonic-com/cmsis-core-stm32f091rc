@@ -1,6 +1,6 @@
 {
   "name": "cmsis-core-stm32f091rc",
-  "version": "0.0.3-tri-0.5.2",
+  "version": "0.0.3-tri-0.8.0",
   "description": "CMSIS Core Implementation for STM32F091xC",
   "keywords": [
     "cmsis",
